@@ -90,3 +90,39 @@ public class Student
 		System.out.println("Highest Total marks is obtained by Roll_no: "+roll);
 	}
 }
+
+//There needs a main class or function to be added:
+
+import java.util.Scanner;
+public class StudentMain 
+{
+	public static void main(String[] args)
+	{
+		Scanner sc = new Scanner(System.in);
+		int n;
+		System.out.print("Enter No. of Students: ");
+		n = sc.nextInt();
+		double arr[] = new double[3];
+		Student stud[] = new Student[n];
+		System.out.println("Enter Marks of Students");
+		for (int i = 0; i < n; i++)
+		{
+			System.out.println("Student "+(i+1)+" :");
+			for (int j = 0; j < 3; j++)
+			{
+				System.out.print("Subject "+(j+1)+": ");
+				arr[j] = sc.nextDouble();
+			}
+			stud[i] = new Student(arr,i+1);
+		}
+		System.out.println("");
+		Student.findTotal(stud);
+		System.out.println("");
+		Student.findMax_marks(stud);
+		System.out.println("");
+		Student.findMax_total(stud);
+		sc.close();
+		
+	}
+}
+// create two seperate files of two classes- one for student class and another is main class
